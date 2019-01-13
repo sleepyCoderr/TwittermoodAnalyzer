@@ -18,12 +18,7 @@ url="https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=realDon
 
 response,data=client.request(url)
 tweets=json.loads(data)
-# @app.rotute("/")
-# class screen_Name:
-#     def enter_name(self,name):
-#         name=input()
-#         self.name=name;
-#         return self.name
+
 
 @app.route("/")
 def index():
