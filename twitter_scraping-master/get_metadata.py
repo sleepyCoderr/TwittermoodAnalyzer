@@ -8,21 +8,28 @@ import zlib
 from tweepy import TweepError
 from time import sleep
 import twitter_credentials
+import oauth2 as oauth
+
 
 # CHANGE THIS TO THE USER YOU WANT
 user = 'realdonaldtrump'
 
-consumer_key=twitter_credentials.CONSUMER_KEY
-consumer_secret=twitter_credentials.CONSUMER_SECRET
-access_token=twitter_credentials.ACCESS_TOKEN
-access_token_secret=twitter_credentials.ACCESS_TOKEN_SECRET
+# consumer_key=twitter_credentials.CONSUMER_KEY
+# consumer_secret=twitter_credentials.CONSUMER_SECRET
+# access_token=twitter_credentials.ACCESS_TOKEN
+# access_token_secret=twitter_credentials.ACCESS_TOKEN_SECRET
 
 # with open('api_keys.json') as f:
 #     keys = json.load(f)
 
-auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth)
+# auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
+# auth.set_access_token(access_token, access_token_secret)
+# api = tweepy.API(auth)
+
+consumer=oauth.Consumer(key=twitter_credentials.CONSUMER_KEY,secret=twitter_credentials.CONSUMER_SECRET)
+access_token=oauth.Token(key=twitter_credentials.ACCESS_TOKEN,secret=twitter_credentials.ACCESS_TOKEN_SECRET)
+client=oauth.Client(consumer,access_token)
+
 user = user.lower()
 output_file = '{}.json'.format(user)
 output_file_short = '{}_short.json'.format(user)
@@ -45,9 +52,12 @@ for go in range(i):
     id_batch = ids[start:end]
     start += 100
     end += 100
-    tweets = api.statuses_lookup(id_batch)
+    # tweets = api.statuses_lookup(id_batch)
+    url=f"https://api.twitter.com/1.1/statuses/show.json?id={id_batch}&tweet_mode=extended"
+    response,data=client.request(url)
+    tweets=json.loads(data)
     for tweet in tweets:
-        all_data.append(dict(tweet._json))
+        all_data.append(tweet)
 
 print('metadata collection complete')
 print('creating master json file')
