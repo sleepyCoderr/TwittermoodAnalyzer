@@ -5,16 +5,41 @@
     <title>Twitter app</title>
     <!-- Bootstrap -->
     <!-- Custom styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
 
 </head>
-<body>
+<body id="parentID">
 
-<div class="text-center primary">
-<h2>President Mood analyzer</h2>
+<div class="primary">
+<h2>Trump</h2>
 </div>
 
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Month 2018
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  <button type="button" class="btn btn-primary jan" data-panelid=jan >January</button>
+  <button type="button" class="btn btn-primary feb" data-panelid=feb >February</button>
+  <button type="button" class="btn btn-primary mar" data-panelid=mar >March</button>
+  <button type="button" class="btn btn-primary apr" data-panelid=apr >April</button>
+  <button type="button" class="btn btn-primary may" data-panelid=may >May</button>
+  <button type="button" class="btn btn-primary jun" data-panelid=jun >June</button>
+  <button type="button" class="btn btn-primary jul" data-panelid=jul >July</button>
+  <button type="button" class="btn btn-primary aug" data-panelid=aug >August</button>
+  <button type="button" class="btn btn-primary sept" data-panelid=sept >September</button>
+  <button type="button" class="btn btn-primary oct" data-panelid=oct >October</button>
+  <button type="button" class="btn btn-primary nov" data-panelid=nov >November</button>
+  <button type="button" class="btn btn-primary dec" data-panelid=dec >December</button>
 
-<div class="chart"></div>
+    <li role="separator" class="divider"></li>
+  </ul>
+ 
+</div>
+
 
 <!-- External JS libraries -->
 
@@ -25,7 +50,9 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<!--script src="{{ url_for('static', filename='app.js') }}"></script-->
-<script src="../static/app.js"></script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+<script src="{{ url_for('static', filename='style.css') }}"></script>
+<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+
 <!-- Custom JS -->
 </body>
