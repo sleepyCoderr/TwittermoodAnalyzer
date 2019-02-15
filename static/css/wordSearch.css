@@ -1,0 +1,31 @@
+#box-display-2{
+	position:relative;
+	text-align:center;
+	top:50px;
+	height:700px;
+	display: inline-block;
+	border-style: solid;
+	border-color:blue;
+	overflow:scroll;
+};
+
+
+#results-count{
+	position:absolute;
+	top:300px;
+}
+
+
+.container{
+	position: absolute;
+	height:50px;
+	top:100px;
+	left:50px;
+}
+
+#word-search{
+	position:relative;
+	top:50px;
+
+
+}
