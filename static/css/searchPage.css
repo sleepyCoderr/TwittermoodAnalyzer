@@ -1,0 +1,63 @@
+.ui-datepicker-title{
+color:blue;
+}
+.ui-widget-header{
+	color:black;
+}
+
+.container{
+	position: absolute;
+	height:50px;
+	top:100px;
+	left:50px;
+}
+
+#date-search{
+	padding:20px;
+}
+
+#word-search-btn{
+	position:absolute;
+	left:610px;
+	top:21px;
+
+};
+
+#to{
+	position:absolute;
+}
+
+
+h3{
+	position:relative;
+	padding:20px;
+};
+
+
+
+.search-bar{
+    position:fixed;
+	top:300px;
+	width: 300px;
+}
+
+.box{
+	position:relative;
+	text-align:center;
+	top:150px;
+	height:700px;
+	width:auto;
+	display: inline-block;
+	border-style: solid;
+	border-color:blue;
+	overflow:scroll;
+};
+
+
+
+
+
+#results-count{
+	position:absolute;
+	top:300px;
+}

@@ -1,13 +1,132 @@
-.dropdown{
-	position: fixed;
-	top:60px;
-	left:80px;
-}
-
 h2{
 	text-align:center;
 }
-.btn{
+
+.latest-tweet{
+	position:relative;
+	text-align:center;
+	top:80px;
+	border-style: solid;
+	border-color:blue;
+}
+
+
+.box{
+	position:relative;
+	text-align:center;
+	top:200px;
+	height:700px;
+	display: inline-block;
+	border-style: solid;
+	border-color:blue;
+	overflow:scroll;
+};
+
+.wrapper {
+	margin-right: 100px; /* 1 */
+	margin-left:  100px; /* 1 */
+  
+	max-width: 960px; /* 2 */
+  
+	padding-right: 10px; /* 3 */
+	padding-left:  10px; /* 3 */
+  }
+
+
+.btn-group{
+	position:relative;
+	top:3px;
+	left:100px;
+	padding-left:10px;
+}
+
+
+.drp{
+	border-style:solid;
+}
+
+
+.container{
+	position: absolute;
+	height:50px;
+	top:100px;
+	left:110px;
+}
+
+h3{
+	position:relative;
+	padding:20px;
+};
+
+
+
+.search-bar{
+	top:300px;
+	width: 10px;
+}
+
+
+
+body{
+	height:auto;
+}
+
+.ui-datepicker-title{
+color:blue;
+}
+.ui-widget-header{
+	color:black;
+}
+
+
+.dropdown-menu{
+vertical-align: bottom;
+text-align:center;}
+
+#drp{
+width:150px;
+height:30px;
+margin-top:5px;
+}
+
+
+/* #first-dropdown{
+	position: relative;
+	top:100px;
+	left:100px;
+}
+
+#second-dropdown{
+	position: relative;
+	top:100px;
+	left:350px;}
+ 
+
+ .dropdownMenu1{
 	position:relative;
 	top:50px;
 }
+
+.dropdown-menu{
+	border:none;
+}
+
+
+
+.divider{
+    width:15px;
+    height:auto;
+    display:inline-block;
+}
+
+input[type=text] {
+	width: 130px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+  }
+*/
+ form.form-inline{
+	 position:relative;
+	 top:25px;
+	 left:120px;
+ }

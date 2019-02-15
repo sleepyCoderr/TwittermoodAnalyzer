@@ -10,7 +10,6 @@ from time import sleep
 import twitter_credentials
 import oauth2 as oauth
 
-
 # CHANGE THIS TO THE USER YOU WANT
 user = 'realdonaldtrump'
 

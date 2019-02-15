@@ -5,54 +5,112 @@
     <title>Twitter app</title>
     <!-- Bootstrap -->
     <!-- Custom styling -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 
 
 </head>
 <body id="parentID">
 
+
+
+
 <div class="primary">
 <h2>Trump</h2>
 </div>
-
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Month 2018
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-  <button type="button" class="btn btn-primary jan" data-panelid=jan >January</button>
-  <button type="button" class="btn btn-primary feb" data-panelid=feb >February</button>
-  <button type="button" class="btn btn-primary mar" data-panelid=mar >March</button>
-  <button type="button" class="btn btn-primary apr" data-panelid=apr >April</button>
-  <button type="button" class="btn btn-primary may" data-panelid=may >May</button>
-  <button type="button" class="btn btn-primary jun" data-panelid=jun >June</button>
-  <button type="button" class="btn btn-primary jul" data-panelid=jul >July</button>
-  <button type="button" class="btn btn-primary aug" data-panelid=aug >August</button>
-  <button type="button" class="btn btn-primary sept" data-panelid=sept >September</button>
-  <button type="button" class="btn btn-primary oct" data-panelid=oct >October</button>
-  <button type="button" class="btn btn-primary nov" data-panelid=nov >November</button>
-  <button type="button" class="btn btn-primary dec" data-panelid=dec >December</button>
-
-    <li role="separator" class="divider"></li>
-  </ul>
- 
+<div class=" box">
+<div class=" display-cards"></div>
 </div>
+
+<div class="container">
+
+
+
+
+<div class="btn-group menu-slide-1" role="group" aria-label="Button group with nested dropdown">
+<button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2017 tweets</button>
+  <div class="dropdown-menu round" id="d-down-1" >
+       <button type="button" class="btn btn-primary jan" id="drp" data-panelid=jan >January</button>
+   <button type="button" class="btn btn-primary feb" id="drp" data-panelid=feb >February</button>
+  <button type="button" class="btn btn-primary mar" id="drp" data-panelid=mar >March</button>
+  <button type="button" class="btn btn-primary apr" id="drp" data-panelid=apr >April</button>
+  <button type="button" class="btn btn-primary may" id="drp" data-panelid=may >May</button>
+  <button type="button" class="btn btn-primary jun" id="drp" data-panelid=jun >June</button>
+  <button type="button" class="btn btn-primary jul" id="drp" data-panelid=jul >July</button>
+  <button type="button" class="btn btn-primary aug" id="drp" data-panelid=aug >August</button>
+  <button type="button" class="btn btn-primary sept" id="drp" data-panelid=sept >September</button>
+  <button type="button" class="btn btn-primary oct" id="drp" data-panelid=oct >October</button>
+  <button type="button" class="btn btn-primary nov" id="drp" data-panelid=nov >November</button>
+  <button type="button" class="btn btn-primary dec" id="drp" data-panelid=dec >December</button>
+</div>
+</div>
+
+
+
+<div class="btn-group menu-slide-2" role="group" aria-label="Button group with nested dropdown">
+<button id="btnGroupDrop1 year-button-2" type="button" class="btn btn-primary dropdown-toggle bt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2018 tweets</button>
+  <div class="dropdown-menu round" id="d-down-2" >
+    <button type="button" class="btn btn-primary jan" id="drp" data-panelid=jan >January</button>
+   <button type="button" class="btn btn-primary feb" id="drp" data-panelid=feb >February</button>
+  <button type="button" class="btn btn-primary mar" id="drp" data-panelid=mar >March</button>
+  <button type="button" class="btn btn-primary apr" id="drp" data-panelid=apr >April</button>
+  <button type="button" class="btn btn-primary may" id="drp" data-panelid=may >May</button>
+  <button type="button" class="btn btn-primary jun" id="drp" data-panelid=jun >June</button>
+  <button type="button" class="btn btn-primary jul" id="drp" data-panelid=jul >July</button>
+  <button type="button" class="btn btn-primary aug" id="drp" data-panelid=aug >August</button>
+  <button type="button" class="btn btn-primary sept" id="drp" data-panelid=sept >September</button>
+  <button type="button" class="btn btn-primary oct" id="drp" data-panelid=oct >October</button>
+  <button type="button" class="btn btn-primary nov" id="drp" data-panelid=nov >November</button>
+  <button type="button" class="btn btn-primary dec" id="drp" data-panelid=dec >December</button>
+  </div>
+  </div>
+
+  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+<button id="btnGroupDrop3" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2019 tweets</button>
+  <div class="dropdown-menu round" >
+
+</div>
+
+</div>
+
+<div class="btn-group" role="group">
+<button id="btnGroupDrop4" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visuals</button>
+  <div class="dropdown-menu round" >
+
+  </div>
+  </div>
+
+  <div class="btn-group" role="group">
+<a href="/search"><button id="btn-search " type="button" class="btn btn-primary " aria-haspopup="true" aria-expanded="false">Search</button></a>
+</div>
+
+
+
+<div class="latest-tweet rounded">
+<h5>Latest Tweet</h5>
+<h6 id="latest-created-tweet">Latest Tweet</h6>
+
+  <blockquote>
+    <p id="content"></p>
+
+  </blockquote>
+  </div>
+</div>
+
 
 
 <!-- External JS libraries -->
 
 <script src="http://d3js.org/d3.v5.min.js"></script>
-<script src="https://d3js.org/d3-color.v1.min.js"></script>
-<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='app.js') }}"></script>
-<script src="{{ url_for('static', filename='style.css') }}"></script>
-<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
-
 <!-- Custom JS -->
 </body>
+
+</html>
