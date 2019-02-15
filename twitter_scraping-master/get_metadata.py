@@ -28,7 +28,7 @@ output_file = '{}.json'.format(user)
 output_file_short = '{}_short.json'.format(user)
 compression = zipfile.ZIP_DEFLATED
 
-with open('all_ids.json') as f:
+with open('2017_all_ids.json') as f:
     ids = json.load(f)
 
 print('total ids: {}'.format(len(ids)))
@@ -41,7 +41,7 @@ i = math.ceil(limit / 100)
 
 for go in range(i):
     print('currently getting {} - {}'.format(start, end))
-    sleep(6)  # needed to prevent hitting API rate limit
+    sleep(16)  # needed to prevent hitting API rate limit
     id_batch = ids[start:end]
     start += 100
     end += 100
