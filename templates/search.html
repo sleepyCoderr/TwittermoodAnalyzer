@@ -13,22 +13,32 @@
 </head>
 <body>
 <nav class="navbar bg-dark">
-<a href ="/" class="navbar-brand">Trump</a>
+<a href ="/" class="navbar-brand">PresidentTrumpTwitterTweets</a>
 <ul class ="navbar-nav">
-<li class="nav-item"><a href="#" class="nav-link"> About</a></li>
+<li class="nav-item"><a href="/about" class="nav-link"> About</a></li>
 </ul>
 </nav>
 
 <div class="container">
+ 
+<div class="btn-group">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Search
+  </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="/search">By Date</a>
+    <a class="dropdown-item" href="/wordSearch">By Specific word</a>
+    <a class="dropdown-item" href="/sentimentSearch">By Sentiment</a>
+
+  </div>
+</div>
 
 <form method="POST" action="/search" class="date-range form-inline">
 <h3 class="text-primary" id="from">From: <input type=text size=8 name="from" placeholder="from" id="from-date">	</h3>
 <h3 class="text-primary" id="to">To: <input type=text size=8 name="to" placeholder="to" id="to-date">	</h3>
 </form>
 
- <div class="btn-group" role="group" id="word-search-btn">
-<a href="/wordSearch"><button id="btn-search " type="button" class="btn btn-primary " aria-haspopup="true" aria-expanded="false">Search Words</button></a>
-</div>
+
 
 <p class="font-weight-light" id="results-count"></p>
 
@@ -38,11 +48,9 @@
 
 <div class="emoji"></div>
   
-<script src="http://d3js.org/d3.v5.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="{{ url_for('static', filename='search_app.js') }}"></script> 
-<script src="{{ url_for('static', filename='hilitor.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='js/min.js/search_app.min.js') }}"></script> 
 </body>
 
 

@@ -1,0 +1,46 @@
+#slider{
+    position: relative;
+    top:80px;
+    left:500px;
+    width:400px;
+};
+
+#polarity{
+    position: absolute;
+    top:60px;
+    left:300px;
+};
+
+.btn-group{
+	position:relative;
+    top:50px;
+};
+
+.labels{
+    position:absolute;
+    top:200px;
+}
+
+.container{
+	position: absolute;
+	height:50px;
+	top:100px;
+	left:50px;
+}
+
+.box{
+	position:relative;
+	text-align:center;
+	top:200px;
+	height:700px;
+	display: inline-block;
+	border-style: solid;
+	border-color:blue;
+	overflow:scroll;
+};
+
+#nq{
+	position:relative;
+	left:200px;
+
+}

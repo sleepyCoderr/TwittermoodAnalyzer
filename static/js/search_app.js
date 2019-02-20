@@ -97,11 +97,11 @@ var createCards=(function (){
 
         for (var i=0;i<=month.length-1;i++){  
         cards(i);
-        document.querySelector("#full_text"+i).textContent=month[i].full_text; 
+        document.querySelector("#full_text"+i).textContent=month[i]._id.full_text; 
         document.querySelector('.card-'+i).style.position="relative";
         document.querySelector('.card-'+i).style.top=i*100+100+"px";
         document.querySelector('.card-'+i).style.left=50+"px";
-        document.querySelector("#created_at"+i).textContent=month[i].created_at; 
+        document.querySelector("#created_at"+i).textContent=month[i]._id.created_at; 
         
      
         }}}

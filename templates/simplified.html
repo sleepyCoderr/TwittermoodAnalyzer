@@ -1,0 +1,82 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>Twitter app</title>
+    <!-- Bootstrap -->
+    <!-- Custom styling -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+
+
+</head>
+<body id="parentID">
+
+
+
+
+<div class="primary">
+<h2>Trump</h2>
+</div>
+
+<div class=" box" id="bx"><div class="display-cards"></div></div>
+
+<div class="container">
+<div class="btn-group menu-slide-1" role="group" aria-label="Button group with nested dropdown">
+<button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2017 tweets</button>
+<div class="dropdown-menu round" id="d-down-1" >  
+<button type="button" class="btn btn-primary erase"   >Erase</button>
+
+
+
+
+  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+<button id="btnGroupDrop3" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2019 tweets</button>
+  <div class="dropdown-menu round" >
+
+</div>
+
+</div>
+
+<div class="btn-group" role="group">
+<button id="btnGroupDrop4" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visuals</button>
+  <div class="dropdown-menu round" >
+
+  </div>
+  </div>
+
+  <div class="btn-group" role="group">
+<a href="/search"><button id="btn-search " type="button" class="btn btn-primary " aria-haspopup="true" aria-expanded="false">Search</button></a>
+</div>
+
+
+
+<div class="latest-tweet rounded">
+<h5>Latest Tweet</h5>
+<h6 id="latest-created-tweet">Latest Tweet</h6>
+
+  <blockquote>
+    <p id="content"></p>
+
+  </blockquote>
+  </div>
+</div>
+
+
+
+<!-- External JS libraries -->
+
+<script src="http://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+<!-- Custom JS -->
+</body>
+
+</html>

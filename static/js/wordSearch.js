@@ -2,6 +2,8 @@
 
 document.querySelector(".box").style.display="none";
 
+
+
 function cards(x){
 
     div=document.createElement("div");
@@ -27,7 +29,7 @@ function cards(x){
 
 $(function(){ 
 
-
+   
               //----------word search-----------------//
               
               $('form#word-search').on('submit',function(){
@@ -56,7 +58,7 @@ $(function(){
                       data:data,
                       success: function(response){
                         if($('.display-cards').length){
-                            $(".display-cards").remove();
+                            $('.display-cards').remove();
                             newDiv=document.createElement("div");
                             newDiv.className="display-cards";
                             document.getElementById("box-display-2").appendChild(newDiv);
@@ -66,11 +68,12 @@ $(function(){
                             newDiv.className="display-cards";
                             document.getElementById("box-display-2").appendChild(newDiv);
                         }
-                          for (i=0;i<response.length;i++){ 
-                            
+                        for (i=0;i<response.length;i++){ 
+                            console.log(response)
                             document.getElementById("results-count").textContent=response.length+(" results found");
                               return createCards.dom(response)
                             };
+                         
                      }
         
                   });  
@@ -86,13 +89,13 @@ var createCards=(function (){
     return {
         dom:function(month){
 
-        for (var i=0;i<=month.length-1;i++){  
+        for (var i=0;i<=month.length;i++){  
         cards(i);
-        document.querySelector("#full_text"+i).textContent=month[i].full_text; 
+        document.querySelector("#full_text"+i).textContent=month[i]._id.full_text; 
         document.querySelector('.card-'+i).style.position="relative";
         document.querySelector('.card-'+i).style.top=i*100+100+"px";
         document.querySelector('.card-'+i).style.left=50+"px";
-        document.querySelector("#created_at"+i).textContent=month[i].created_at; 
+        document.querySelector("#created_at"+i).textContent=month[i]._id.created_at; 
         
      
         }}}

@@ -1,31 +1,4 @@
-
-janData=d3.json("/jantweets").then(function(data){
-    return data;});
-// febData=d3.json("/febtweets").then(function(data){
-//     return data;});
-// marData=d3.json("/martweets").then(function(data){
-//     return data;});
-// aprData=d3.json("/aprtweets").then(function(data){
-//     return data;});
-// mayData=d3.json("/maytweets").then(function(data){
-//     return data;});
-// junData=d3.json("/juntweets").then(function(data){
-//     return data;});
-// julData=d3.json("/jultweets").then(function(data){
-//     return data;});
-// augData=d3.json("/augtweets").then(function(data){
-//     return data;});
-// septData=d3.json("/septtweets").then(function(data){
-//     return data;});
-// octData=d3.json("/octtweets").then(function(data){
-//     return data;});
-// novData=d3.json("/novtweets").then(function(data){
-//     return data;});
-// decData=d3.json("/dectweets").then(function(data){
-//     return data;});
-
-latestData=d3.json("/latest").then(function(data){
-        return data;});
+ 
 //-------------------- function that creates the cards and appends the cards to the DOM for---------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------//
@@ -53,50 +26,89 @@ function cards(x){
 //----------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------//
-// janData,febData,marData,aprData,mayData,junData,julData,augData,septData,octData,novData,decData
-Promise.all([janData,latestData])
-    .then(function(values){
-        jan=values[0];
-        // feb=values[1];
-        // mar=values[2];
-        // apr=values[3];
-        // may=values[4];
-        // jul=values[5];
-        // jun=values[6];
-        // aug=values[7];
-        // sept=values[8];
-        // oct=values[9];
-        // nov=values[10];
-        // dec=values[11];
-        latest=values[1];
+//listens for button click
+$(document).ready(function(){
+    $("#nq").click(function(){
+        location.reload(true);
+    });
+});
 
-        //listens for button click
-$(function(){ 
-         $('.btn-primary').on('click',function(){
+// function reloadPage(){
+//     location.reload(true);
+// }
+$(function(){
+    
+var results=[];
+    $.getJSON("/latest",function(data){
+        //latest tweet
+
+document.querySelector('#content').textContent=data[0].full_text;
+document.querySelector("#latest-created-tweet").textContent=data[0].created_at;
+    });
+        $('.btn17').on('click',function(){
             
-            //gets the id of the clicked button
+            var y=2017;
             var x=$(this).attr('data-panelid');
-            if(x=="jan"){
-               $('.jan').toggle();
-               $('.latest-tweet').hide();
-               return createCards.dom(jan);
-            }
 
-        //     else if(x=="feb"){
-        //     $('.feb').toggle();
-        //     $('.latest-tweet').hide();
-        //        return createCards.dom(feb); 
-        //     }
+        $.ajax({
 
+            cache: false,
+        url:'http://127.0.0.1:5000/'+x+"/"+y,
+        type:'get',
+         dataType:"json",
+        success:function(data){
+            $.each(data,function(i,data){
+                results.push(data);
+                $('.latest-tweet').hide()
+            });
+        createCards.dom(results)} });
+    
+    });
 
-        //     else if(x=="mar"){
-        //     $('.mar').toggle();
-        //     $('.latest-tweet').hide();
-        //         return createCards.dom(mar); 
-        //     }
+    $('.btn18').on('click',function(){
+        //gets the id of the clicked button
+        var x=$(this).attr('data-panelid');
+        var y=2018;
+        console.log(x)
+    $.ajax({
+
+        cache: false,
+    url:'http://127.0.0.1:5000/'+x+"/"+y,
+    type:'get',
+    // data:{month: x,
+    //         year:y},
+    dataType:"json",
+    success:function(data){
             
-        })
+        $.each(data,function(i,data){
+            results.push(data);
+            $('.latest-tweet').hide()
+        });
+    createCards.dom(results)} });
+});
 
+$('.btn19').on('click',function(){
+    //gets the id of the clicked button
+    var x=$(this).attr('data-panelid');
+    var y=2019;
+$.ajax({
+
+    cache: false,
+url:'http://127.0.0.1:5000/'+x+"/"+y,
+type:'get',
+
+dataType:"json",
+success:function(data){
+        
+    $.each(data,function(i,data){
+        results.push(data);
+        $('.latest-tweet').hide()
+    });
+createCards.dom(results)} });
+console.log(results)
+});
+
+    // });      
         $(".menu-slide-1").hover(function() {
             $("#d-down-1").slideToggle(300);
         });
@@ -105,12 +117,15 @@ $(function(){
             $("#d-down-2").slideToggle(300);
         });
 
+        $(".menu-slide-3").hover(function() {
+            $("#d-down-3").slideToggle(300);
+        });
+
+
 
 
     });
-//latest tweet
-document.querySelector('#content').textContent=latest[0].full_text;
-document.querySelector("#latest-created-tweet").textContent=latest[0].created_at;
+
 
 document.querySelector(".box").style.display="none";
 
@@ -120,23 +135,14 @@ var createCards=(function (){
     return {
         dom:function(month){
         document.querySelector(".box").style.display="block";
-
         for (var i=0;i<=month.length-1;i++){ 
-         
         cards(i);
-        console.log("i"+i, month.length)
-        document.querySelector("#full_text"+i).textContent=month[i].full_text; 
+        document.querySelector("#full_text"+i).textContent=month[i]._id.full_text; 
         document.querySelector('.card-'+i).style.position="relative";
         document.querySelector('.card-'+i).style.top=i*100+100+"px";
         document.querySelector('.card-'+i).style.left=10+"px";
-        document.querySelector("#created_at"+i).textContent=month[i].created_at;
-
-
-
-        }}}
-
-
-          
+        document.querySelector("#created_at"+i).textContent=month[i]._id.created_at;
+        }}}      
 })();
 //----------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------//
@@ -149,6 +155,6 @@ var createCards=(function (){
 
 
     
-    });
+    // });
 
     
