@@ -61,7 +61,10 @@ document.querySelector("#latest-created-tweet").textContent=data[0].created_at;
                 results.push(data);
                 $('.latest-tweet').hide()
             });
-        createCards.dom(results)} });
+        createCards.dom(results)} 
+    
+    
+    });
     
     });
 

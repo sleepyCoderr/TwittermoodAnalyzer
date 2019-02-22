@@ -26,7 +26,7 @@ from bson import json_util
 
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/tweetsdb"
+app.config["MONGO_URI"] = ("mongodb+srv://momoyay:Pixel%2A91055@cluster0-zlicd.mongodb.net/tweetsdb")
 mongo = PyMongo(app)
 tweet=mongo.db.tweets
 
@@ -41,16 +41,20 @@ id=results[0]["id_str"]
 tweet.insert_many(results)
 
 def insert_tweets():
-    created_at=tweet.find({"id_str":id})
-    for twts in created_at:
-        date=datetime.datetime.strptime(twts["created_at"],'%a %b %d %H:%M:%S +0000 %Y').replace(tzinfo=pytz.UTC)
-        ts = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(twts['created_at'],'%a %b %d %H:%M:%S +0000 %Y'))
-        dict_one={"Month":date.strftime("%b"),"Weekday":date.strftime("%a"),"Day":int(date.strftime("%d")),"Year":date.year}
-        tweet_id=twts["_id"]
-        tstamp=datetime.datetime.strptime(ts, "%Y-%m-%d %H:%M:%S").timestamp()
-        insert_calendar_format(tweet_id,ts[0:10])
-        insert_time_stamp(tweet_id,tstamp)
-        insertupdate(tweet_id,dict_one)
+        created_at=tweet.find({"id_str":id})
+        for twts in created_at:
+                date=datetime.datetime.strptime(twts["created_at"],'%a %b %d %H:%M:%S +0000 %Y').replace(tzinfo=pytz.UTC)
+                ts = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(twts['created_at'],'%a %b %d %H:%M:%S +0000 %Y'))
+                dict_one={"Month":date.strftime("%b"),"Weekday":date.strftime("%a"),"Day":int(date.strftime("%d")),"Year":date.year}
+                tweet_id=twts["_id"]
+                tstamp=datetime.datetime.strptime(ts, "%Y-%m-%d %H:%M:%S").timestamp()
+                insert_calendar_format(tweet_id,ts[0:10])
+                insert_time_stamp(tweet_id,tstamp)
+                insertupdate(tweet_id,dict_one)
+
+
+
+
 
         
         

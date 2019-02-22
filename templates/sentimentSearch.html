@@ -1,62 +1,4 @@
-<!--doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Twitter App</title>
-  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/sentimentsearch.css') }}">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-</head>
-
-<body>
-<nav class="navbar bg-dark">
-<a href ="/" class="navbar-brand">PresidentTrumpTwitterTweets</a>
-<ul class ="navbar-nav">
-<li class="nav-item"><a href="#" class="nav-link"> About</a></li>
-</ul>
-
-</nav>
-
-<div class="container">
-
-<div class="btn-group">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  Search
-  </a>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="/search">By Date</a>
-    <a class="dropdown-item" href="/wordSearch">By Specific word</a>
-    <a class="dropdown-item" href="sentimentSearch">By Sentiment</a>
-
-  </div>
-</div>
-
-<form method="POST" action="/sentimentSearch" id="sentiment-search">
-<span id="polarity">Polarity</span>
-<input id="slider" type="text" class="span2" value="" data-slider-min="-1" data-slider-max="1" data-slider-step="5" data-slider-value="[250,450]"/>
-<div class="active-cyan-3 active-cyan-4 mb-4 search-bar">
-</form>
-
-<p class="font-weight-light" id="results-count"></p>
-</div>
-<div class="box rounded" id="box-display-2"></div>
-
-  
-<script src="http://d3js.org/d3.v5.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="{{ url_for('static', filename='sentimentSearch.js') }}"></script> 
-<script src="{{ url_for('static', filename='hilitor.min.js') }}"></script> 
-
-
-</body>
-
-</html-->
 
 <!doctype html>
 <html lang="en">
@@ -79,11 +21,17 @@
 </ul>
 
 </nav>
-<div class=" box" id="bx">
+<div class="box" id="bx">
 <div class="display-cards"></div>
 </div>
 <div class="container">
+<h6 id="note-1">Use Slider to change values</h6>
+<h7 id="note-3">Polarity uses values between -1 and 1. -1 being very negative, 1 being very positive</h7>
+<h6 id="note-2">For efficient search make sure min and max are either both positive or both negative</h6>
+<h7></h7>
+
   <button type="button" class="btn btn-primary btn17" id="nq">Query</button>
+
 
 
 <div id="slider"></div>
@@ -117,5 +65,6 @@ Polarity: <span id="polarity"></span>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/min.js/sentimentSearch.min.js') }}"></script> 
+
 </body>
 </html>
